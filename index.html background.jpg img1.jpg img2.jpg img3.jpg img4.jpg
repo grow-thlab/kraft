@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>KRAFT Amoblamientos</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: url('background.jpg') no-repeat center center fixed;
+      background-size: cover;
+      color: #fff;
+      position: relative;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,0.75);
+      z-index: -1;
+    }
+    header {
+      text-align: center;
+      padding: 60px 20px;
+      background: #000;
+    }
+    header h1 {
+      font-size: 40px;
+      letter-spacing: 2px;
+      color: #d4af37; /* dorado */
+      text-transform: uppercase;
+    }
+    header p {
+      color: #bbb;
+    }
+    .btn {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 12px 25px;
+      background: gold;
+      color: black;
+      text-decoration: none;
+      font-weight: bold;
+      border-radius: 5px;
+    }
+    .section {
+      padding: 50px 20px;
+      text-align: center;
+      background: rgba(0,0,0,0.6);
+      margin: 20px;
+      border-radius: 10px;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      margin-top: 30px;
+    }
+    .card {
+      background: #1c1c1c;
+      padding: 10px;
+      border-radius: 14px;
+      overflow: hidden;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.4);
+    }
+    .card img {
+      width: 100%;
+      border-radius: 10px;
+      transition: transform 0.5s ease, filter 0.5s ease;
+      cursor: pointer;
+    }
+    .card img:hover {
+      transform: scale(1.08);
+      filter: brightness(1.1);
+    }
+    footer {
+      text-align: center;
+      padding: 30px;
+      background: #000;
+      font-size: 14px;
+      color: #777;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>KRAFT</h1>
+  <p>Muebles a medida · Diseño y fabricación</p>
+  <a class="btn" href="https://wa.me/5492644602957" target="_blank">Solicitar presupuesto</a>
+</header>
+
+<section class="section">
+  <h2>Sobre nosotros</h2>
+  <p>Diseñamos y fabricamos muebles a medida con materiales de alta calidad, cuidando cada detalle para lograr espacios únicos.</p>
+</section>
+
+<section class="section">
+  <h2>Servicios</h2>
+  <div class="grid">
+    <div class="card">
+      <h3>Cocinas</h3>
+      <p>Diseño moderno y funcional adaptado a tu espacio.</p>
+    </div>
+    <div class="card">
+      <h3>Placares</h3>
+      <p>Optimización total del espacio con terminaciones premium.</p>
+    </div>
+    <div class="card">
+      <h3>Oficinas</h3>
+      <p>Soluciones prácticas y elegantes para trabajar mejor.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <h2>Trabajos</h2>
+  <div class="grid">
+    <div class="card"><img src="img1.jpg" alt="Espejo LED" style="width:100%; border-radius:10px;"></div>
+    <div class="card"><img src="img2.jpg" alt="Mueble TV" style="width:100%; border-radius:10px;"></div>
+    <div class="card"><img src="img3.jpg" alt="Lavadero" style="width:100%; border-radius:10px;"></div>
+    <div class="card"><img src="img4.jpg" alt="Placard" style="width:100%; border-radius:10px;"></div>
+  </div>
+</section>
+
+<section class="section">
+  <h2>Contacto</h2>
+  <p>San Juan, Argentina</p>
+  <p><span style="color:#d4af37; font-weight:bold;">📞 264 460 2957</span></p>
+  <p>📸 Instagram: <a href="https://instagram.com/kraft_mueblesok" target="_blank" style="color:#d4af37; text-decoration:none;">@kraft_mueblesok</a></p>
+  <p>📘 Facebook: <a href="https://www.facebook.com/KRAFT%20Muebles%20de%20diseño" target="_blank" style="color:#d4af37; text-decoration:none;">KRAFT muebles de diseño</a></p>
+  <a class="btn" href="https://wa.me/5492644602957" target="_blank">Hablar por WhatsApp</a>
+</section>
+
+<footer>
+  <p>© 2026 KRAFT Amoblamientos</p>
+</footer>
+
+<script>
+// Lightbox simple
+const images = document.querySelectorAll('.card img');
+const overlay = document.createElement('div');
+overlay.style.position = 'fixed';
+overlay.style.top = 0;
+overlay.style.left = 0;
+overlay.style.width = '100%';
+overlay.style.height = '100%';
+overlay.style.background = 'rgba(0,0,0,0.9)';
+overlay.style.display = 'none';
+overlay.style.alignItems = 'center';
+overlay.style.justifyContent = 'center';
+overlay.style.zIndex = 999;
+
+document.body.appendChild(overlay);
+
+const img = document.createElement('img');
+img.style.maxWidth = '90%';
+img.style.maxHeight = '90%';
+img.style.borderRadius = '10px';
+overlay.appendChild(img);
+
+images.forEach(el => {
+  el.addEventListener('click', () => {
+    img.src = el.src;
+    overlay.style.display = 'flex';
+  });
+});
+
+overlay.addEventListener('click', () => {
+  overlay.style.display = 'none';
+});
+</script>
+
+</body>
+</html>
